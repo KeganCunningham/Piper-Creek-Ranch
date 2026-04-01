@@ -169,6 +169,16 @@ ul { list-style: none; }
   height: 2px;
   background: var(--parchment);
   transition: all 0.3s;
+  transform-origin: center;
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1028,8 +1038,11 @@ ul { list-style: none; }
 /* ═══════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════ */
+/* ── Tablet (max 900px) ── */
 @media (max-width: 900px) {
   :root { --section-py: 56px; }
+
+  html, body { overflow-x: hidden; }
 
   .nav__toggle { display: flex; }
   .nav__links {
@@ -1042,16 +1055,23 @@ ul { list-style: none; }
     gap: 20px;
     transform: translateY(-120%);
     transition: transform 0.35s ease;
+    z-index: 999;
   }
   .nav__links.is-open {
     transform: translateY(0);
   }
+  .nav__links .btn--outline,
+  .nav__links .btn--gold {
+    width: 100%;
+    text-align: center;
+  }
 
-  .stats__inner { gap: 8px; }
+  .stats__inner { gap: 8px; flex-wrap: wrap; justify-content: center; }
   .stats__item { padding: 8px 16px; }
   .stats__divider { display: none; }
   .stats__number { font-size: 1.3rem; }
 
+  .lots__aerial-wrap { margin: 0 auto 32px; }
   .highlights__grid { grid-template-columns: 1fr; }
   .gallery__grid { grid-template-columns: repeat(2, 1fr); }
   .gallery__item--wide { grid-column: span 2; }
@@ -1062,6 +1082,7 @@ ul { list-style: none; }
   .columbus__grid { grid-template-columns: repeat(2, 1fr); }
   .columbus__hero-img { height: 240px; }
   .contact__grid { grid-template-columns: 1fr; }
+  .embed-map__frame iframe { min-height: 400px; }
 
   .footer__inner {
     flex-direction: column;
@@ -1074,22 +1095,70 @@ ul { list-style: none; }
   }
 }
 
+/* ── Phone (max 600px) ── */
 @media (max-width: 600px) {
-  .hero__title { font-size: 2rem; }
-  .hero__crest { width: 56px; height: 56px; }
-  .pin__label { font-size: 0.6rem; padding: 3px 8px; }
-  .lot-detail { width: 220px; top: 8px; right: 8px; }
-  .lot-detail__img { height: 120px; }
-  .contact__actions { flex-direction: column; align-items: center; }
+  .hero { height: 65vh; min-height: 400px; }
+  .hero__title { font-size: 1.8rem; }
+  .hero__sub { font-size: 0.9rem; letter-spacing: 0.08em; }
+  .hero__crest { width: 48px; height: 48px; margin-bottom: 12px; }
+  .hero__overlay { padding: 60px 16px 48px; }
+
+  .pin__label { font-size: 0.55rem; padding: 3px 7px; }
+  .pin__label--lot { font-size: 0.5rem; padding: 3px 6px; }
+  .pin--interactive { transform: translate(-50%, -50%) scale(0.85); }
+
+  .lot-detail { width: 200px; top: 8px; right: 8px; }
+  .lot-detail__img { height: 100px; }
+  .lot-detail__name { font-size: 1.1rem; padding: 10px 12px 2px; }
+  .lot-detail__meta { font-size: 0.75rem; padding: 0 12px 12px; }
+
+  .section-title { font-size: 1.6rem; }
+  .section-sub { font-size: 0.9rem; margin-bottom: 32px; }
+
+  .stats { padding: 20px 0; }
+  .stats__item { padding: 6px 12px; min-width: 80px; }
+  .stats__number { font-size: 1.1rem; }
+  .stats__label { font-size: 0.6rem; }
+
+  .lots__table { font-size: 0.8rem; }
+  .lots__table th { padding: 10px 12px; font-size: 0.65rem; }
+  .lots__table td { padding: 10px 12px; }
+  .lots__gallery-title { font-size: 1.2rem; margin: 32px 0 16px; }
+
+  .contact__actions { flex-direction: column; align-items: stretch; }
+  .contact__actions .btn { text-align: center; }
+  .contact__card { padding: 24px; }
+
   .form-row { grid-template-columns: 1fr; }
+  .btn--lg { padding: 14px 24px; font-size: 0.85rem; }
+
   .lots__gallery { grid-template-columns: 1fr; }
   .lot-card__img { height: 180px; }
+
   .gallery__grid { grid-template-columns: 1fr; }
   .gallery__item--wide { grid-column: span 1; }
-  .columbus__grid { grid-template-columns: 1fr; }
-  .columbus__gallery { grid-template-columns: 1fr; }
-  .columbus__hero-img { height: 200px; }
-  .gallery__item--wide .gallery__img { height: 220px; }
-  .gallery__item:not(.gallery__item--wide) .gallery__img { height: 200px; }
+  .gallery__item--wide .gallery__img { height: 200px; }
+  .gallery__item:not(.gallery__item--wide) .gallery__img { height: 180px; }
+
   .dist-grid { grid-template-columns: 1fr; }
+  .highlights__bullets li { font-size: 0.88rem; }
+
+  .columbus__grid { grid-template-columns: 1fr; }
+  .columbus__hero-img { height: 180px; }
+  .columbus__drive-badge { padding: 8px 14px; bottom: 12px; right: 12px; }
+  .columbus__drive-time { font-size: 1.2rem; }
+  .columbus__card { padding: 18px 16px; }
+  .columbus__card-title { font-size: 1rem; }
+
+  .clubs__img-wrap { height: 180px; }
+  .clubs__body { padding: 20px; }
+  .clubs__name { font-size: 1.3rem; }
+
+  .embed-map__frame iframe { min-height: 300px; }
+
+  .region-map__wrap { margin: 0 -24px; }
+  .region-map__img { border-radius: 0; }
+
+  .footer { padding: 28px 0 16px; }
+  .footer__legal { font-size: 0.65rem; }
 }
