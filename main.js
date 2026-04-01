@@ -323,9 +323,10 @@
     var propertyLat = 29.83969;
     var propertyLng = -96.58186;
 
+    // Zoom 9 shows Houston, Austin, San Antonio context
     var map = L.map('regionMap', {
-      center: [propertyLat, propertyLng],
-      zoom: 10,
+      center: [29.85, -96.2],
+      zoom: 8,
       scrollWheelZoom: false,
       zoomControl: true
     });
@@ -335,22 +336,86 @@
       maxZoom: 18
     }).addTo(map);
 
-    // Custom emblem icon
+    // ── City data with drive times ──
+    var cities = [
+      { name: 'Columbus',      lat: 29.7066, lng: -96.5397, dist: '8 mi',   time: '~12 min' },
+      { name: 'Round Top',     lat: 30.0600, lng: -96.6811, dist: '26 mi',  time: '~30 min' },
+      { name: 'Sealy',         lat: 29.7808, lng: -96.1572, dist: '30 mi',  time: '~35 min' },
+      { name: 'Houston',       lat: 29.7604, lng: -95.3698, dist: '82 mi',  time: '~1 hr 15 min' },
+      { name: 'Austin',        lat: 30.2672, lng: -97.7431, dist: '94 mi',  time: '~1 hr 30 min' },
+      { name: 'San Antonio',   lat: 29.4241, lng: -98.4936, dist: '133 mi', time: '~2 hrs' }
+    ];
+
+    // Custom property emblem icon
     var emblemIcon = L.divIcon({
       className: 'custom-marker',
-      html: '<div style="width:48px;height:48px;background:rgba(26,22,18,0.9);border:3px solid #b8912a;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.4);">' +
-            '<img src="emblem.svg" style="width:30px;height:30px;" alt="">' +
+      html: '<div style="width:52px;height:52px;background:rgba(26,22,18,0.92);border:3px solid #b8912a;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.5);animation:map-pulse 2s ease-out infinite;">' +
+            '<img src="emblem.svg" style="width:32px;height:32px;" alt="">' +
             '</div>',
-      iconSize: [48, 48],
-      iconAnchor: [24, 24],
-      popupAnchor: [0, -28]
+      iconSize: [52, 52],
+      iconAnchor: [26, 26],
+      popupAnchor: [0, -30]
     });
 
-    var marker = L.marker([propertyLat, propertyLng], { icon: emblemIcon }).addTo(map);
-    marker.bindPopup('<strong>Piper Creek Ranch Estates</strong><span>68 Acres &bull; Columbus, TX</span>').openPopup();
+    // City marker icon
+    function cityIcon(name) {
+      return L.divIcon({
+        className: 'custom-marker',
+        html: '<div class="city-dot"></div>' +
+              '<div class="city-label">' + name + '</div>',
+        iconSize: [0, 0],
+        iconAnchor: [0, 0],
+        popupAnchor: [0, -12]
+      });
+    }
 
-    // Enable scroll zoom after first click on map
-    map.on('click', function () {
+    // Add property marker
+    var propertyMarker = L.marker([propertyLat, propertyLng], { icon: emblemIcon }).addTo(map);
+    propertyMarker.bindPopup(
+      '<strong>Piper Creek Ranch Estates</strong>' +
+      '<span>68 Acres &bull; Columbus, TX</span>'
+    ).openPopup();
+
+    // Track active route line
+    var activeRoute = null;
+    var activeCityMarker = null;
+
+    // Add city markers
+    cities.forEach(function (city) {
+      var marker = L.marker([city.lat, city.lng], { icon: cityIcon(city.name) }).addTo(map);
+
+      marker.on('click', function () {
+        // Remove previous route
+        if (activeRoute) { map.removeLayer(activeRoute); }
+        if (activeCityMarker) { activeCityMarker.classList.remove('city-active'); }
+
+        // Draw route line
+        activeRoute = L.polyline(
+          [[propertyLat, propertyLng], [city.lat, city.lng]],
+          { color: '#b8912a', weight: 3, opacity: 0.8, dashArray: '8, 8' }
+        ).addTo(map);
+
+        // Show popup with drive time
+        marker.bindPopup(
+          '<strong>' + city.name + '</strong>' +
+          '<span>' + city.dist + ' &bull; ' + city.time + ' drive</span>'
+        ).openPopup();
+
+        // Highlight
+        var el = marker.getElement();
+        if (el) {
+          activeCityMarker = el;
+          el.classList.add('city-active');
+        }
+      });
+    });
+
+    // Click map background to clear route
+    map.on('click', function (e) {
+      if (activeRoute) {
+        map.removeLayer(activeRoute);
+        activeRoute = null;
+      }
       map.scrollWheelZoom.enable();
     });
   }
