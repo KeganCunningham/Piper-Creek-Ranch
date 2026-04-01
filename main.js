@@ -341,6 +341,8 @@
       { name: 'Columbus',      lat: 29.7066, lng: -96.5397, dist: '8 mi',   time: '~12 min' },
       { name: 'Round Top',     lat: 30.0600, lng: -96.6811, dist: '26 mi',  time: '~30 min' },
       { name: 'Sealy',         lat: 29.7808, lng: -96.1572, dist: '30 mi',  time: '~35 min' },
+      { name: 'Katy',           lat: 29.7858, lng: -95.8245, dist: '60 mi',  time: '~55 min' },
+      { name: 'Memorial',      lat: 29.7752, lng: -95.5005, dist: '66 mi',  time: '~1 hr' },
       { name: 'Houston',       lat: 29.7604, lng: -95.3698, dist: '82 mi',  time: '~1 hr 15 min' },
       { name: 'Austin',        lat: 30.2672, lng: -97.7431, dist: '94 mi',  time: '~1 hr 30 min' },
       { name: 'San Antonio',   lat: 29.4241, lng: -98.4936, dist: '133 mi', time: '~2 hrs' }
