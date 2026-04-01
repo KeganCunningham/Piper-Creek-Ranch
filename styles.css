@@ -6,10 +6,16 @@
 /* ── VARIABLES ── */
 :root {
   --ink: #1a1612;
+  --earth: #2c2318;
+  --bark: #4a3c2c;
   --gold: #b8912a;
   --gold-lt: #d4ae52;
+  --gold-pale: #e8d48a;
   --parchment: #f5eed8;
+  --cream: #faf6ec;
   --sage: #7a8c6e;
+  --sage-dk: #4a5c40;
+  --sky: #8fa8b8;
   --white: #ffffff;
   --ink-50: rgba(26, 22, 18, 0.5);
   --ink-80: rgba(26, 22, 18, 0.8);
@@ -52,6 +58,16 @@ ul { list-style: none; }
   text-align: center;
   color: var(--ink);
   margin-bottom: 12px;
+}
+/* Diamond divider under section titles */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  margin: 14px auto 0;
 }
 .section-title--light { color: var(--parchment); }
 .section-sub {
@@ -136,7 +152,17 @@ ul { list-style: none; }
   font-family: var(--font-heading);
   font-size: 1.35rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+}
+.nav__wordmark-land {
+  font-family: var(--font-body);
+  font-weight: 200;
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-top: -2px;
 }
 .nav__links {
   display: flex;
