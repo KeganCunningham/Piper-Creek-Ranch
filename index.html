@@ -22,6 +22,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="print.css" media="print">
 </head>
@@ -341,13 +343,7 @@
     <div class="container">
       <h2 class="section-title">Regional Context</h2>
       <p class="section-sub">Perfectly positioned between Houston and Austin along the I-10 corridor.</p>
-    </div>
-    <div class="region-map__wrap">
-      <img src="region-map-cropped.jpg" alt="Regional satellite view showing Piper Creek Ranch Estates relative to Columbus, Round Top, and Sealy" class="region-map__img">
-      <div class="pin pin--pulse" style="top:44.9%;left:39.9%">
-        <span class="pin__dot"></span>
-        <span class="pin__label pin__label--callout">Piper Creek Ranch Estates</span>
-      </div>
+      <div id="regionMap" class="region-map__leaflet"></div>
     </div>
   </section>
 

@@ -246,7 +246,7 @@
   }
 
   // ── Parallax on aerial images ──
-  var parallaxImages = document.querySelectorAll('.lots__aerial-img, .region-map__img');
+  var parallaxImages = document.querySelectorAll('.lots__aerial-img');
 
   if (parallaxImages.length) {
     // Add parallax wrapper class
@@ -314,6 +314,44 @@
         shareBtn.textContent = 'Link Copied!';
         setTimeout(function () { shareBtn.textContent = orig; }, 2000);
       }
+    });
+  }
+
+  // ── Regional Leaflet map ──
+  var mapEl = document.getElementById('regionMap');
+  if (mapEl && typeof L !== 'undefined') {
+    var propertyLat = 29.83969;
+    var propertyLng = -96.58186;
+
+    var map = L.map('regionMap', {
+      center: [propertyLat, propertyLng],
+      zoom: 10,
+      scrollWheelZoom: false,
+      zoomControl: true
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+      maxZoom: 18
+    }).addTo(map);
+
+    // Custom emblem icon
+    var emblemIcon = L.divIcon({
+      className: 'custom-marker',
+      html: '<div style="width:48px;height:48px;background:rgba(26,22,18,0.9);border:3px solid #b8912a;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.4);">' +
+            '<img src="emblem.svg" style="width:30px;height:30px;" alt="">' +
+            '</div>',
+      iconSize: [48, 48],
+      iconAnchor: [24, 24],
+      popupAnchor: [0, -28]
+    });
+
+    var marker = L.marker([propertyLat, propertyLng], { icon: emblemIcon }).addTo(map);
+    marker.bindPopup('<strong>Piper Creek Ranch Estates</strong><span>68 Acres &bull; Columbus, TX</span>').openPopup();
+
+    // Enable scroll zoom after first click on map
+    map.on('click', function () {
+      map.scrollWheelZoom.enable();
     });
   }
 
