@@ -316,29 +316,28 @@ ul { list-style: none; }
 }
 .pin__label--callout {
   position: absolute;
-  top: -42px;
+  top: -52px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.75rem;
-  padding: 6px 16px;
-  background: rgba(26, 22, 18, 0.92);
+  font-size: 0.78rem;
+  padding: 8px 18px;
+  background: rgba(26, 22, 18, 0.95);
   border: 2px solid var(--gold);
   border-radius: 4px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 .pin__label--callout::after {
   content: '';
   position: absolute;
-  bottom: -7px;
+  bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 7px solid var(--gold);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--gold);
 }
-
 /* Interactive lot pins */
 .pin--interactive {
   pointer-events: auto;
