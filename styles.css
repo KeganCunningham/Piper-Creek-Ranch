@@ -293,6 +293,52 @@ ul { list-style: none; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
+/* Pulsing map pin */
+.pin--pulse {
+  pointer-events: none;
+}
+.pin__dot {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: var(--gold);
+  border: 3px solid var(--parchment);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(184, 145, 42, 0.5);
+  animation: pulse-ring 2s ease-out infinite;
+  position: relative;
+  z-index: 2;
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(184, 145, 42, 0.5); }
+  70% { box-shadow: 0 0 0 18px rgba(184, 145, 42, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(184, 145, 42, 0); }
+}
+.pin__label--callout {
+  position: absolute;
+  top: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  padding: 6px 16px;
+  background: rgba(26, 22, 18, 0.92);
+  border: 2px solid var(--gold);
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.pin__label--callout::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid var(--gold);
+}
+
 /* Interactive lot pins */
 .pin--interactive {
   pointer-events: auto;
