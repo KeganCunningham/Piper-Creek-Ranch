@@ -1,0 +1,141 @@
+/* ═══════════════════════════════════════════════════
+   PIPER CREEK RANCH ESTATES — Print / PDF Stylesheet
+   Use Chrome print dialog → Save as PDF
+   ═══════════════════════════════════════════════════ */
+
+@media print {
+  /* Reset for print */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  html { scroll-behavior: auto; }
+
+  body {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #1a1612;
+    background: #fff !important;
+  }
+
+  /* Hide interactive elements */
+  .nav,
+  .embed-map,
+  .contact__form-wrap,
+  .btn--gold.btn--sm {
+    display: none !important;
+  }
+
+  /* Remove margins/shadows for clean print */
+  .container { max-width: 100%; padding: 0 0.5in; }
+  img { box-shadow: none !important; border-radius: 0 !important; }
+
+  /* Hero */
+  .hero { margin-top: 0; min-height: auto; height: auto; page-break-after: avoid; }
+  .hero__slides, .hero__dots { display: none !important; }
+  .hero__overlay { position: relative; background: #1a1612 !important; padding: 24pt 20pt; }
+  .hero__crest { width: 50pt; height: 50pt; }
+  .hero__title { font-size: 28pt; color: #f5eed8 !important; }
+  .hero__sub { color: #d4ae52 !important; }
+
+  /* Stats bar */
+  .stats {
+    background: #1a1612 !important;
+    border-color: #b8912a !important;
+    padding: 12pt 0;
+    page-break-inside: avoid;
+  }
+  .stats__number { color: #d4ae52 !important; font-size: 13pt; }
+  .stats__label { color: #f5eed8 !important; font-size: 7pt; }
+  .stats__divider { background: rgba(245,238,216,0.2) !important; }
+
+  /* Section titles */
+  .section-title { font-size: 20pt; page-break-after: avoid; }
+  .section-sub { font-size: 10pt; page-break-after: avoid; }
+
+  /* Lots */
+  .lots { page-break-before: always; padding: 24pt 0; }
+  .lots__aerial-wrap { max-width: 100%; margin-bottom: 20pt; }
+  .lots__table { font-size: 9pt; }
+  .lots__table thead { background: #1a1612 !important; }
+  .lots__table th { color: #f5eed8 !important; padding: 8pt 12pt; }
+  .lots__table td { padding: 8pt 12pt; }
+  .lots__price { color: #b8912a !important; }
+
+  /* Highlights */
+  .highlights {
+    background: #f5eed8 !important;
+    padding: 24pt 0;
+    page-break-inside: avoid;
+  }
+  .highlights__grid { gap: 24pt; }
+  .highlights__bullets li { font-size: 9.5pt; margin-bottom: 8pt; }
+  .highlights__bullets li::before { border-color: #b8912a !important; }
+  .dist-grid__item {
+    background: #fff !important;
+    border-left-color: #b8912a !important;
+    padding: 8pt;
+  }
+  .dist-grid__value { color: #b8912a !important; font-size: 11pt; }
+
+  /* Regional map */
+  .region-map { page-break-before: always; padding: 24pt 0; }
+
+  /* Clubs */
+  .clubs { padding: 24pt 0; page-break-inside: avoid; }
+  .clubs__card { box-shadow: none !important; border: 1pt solid #ddd; }
+  .clubs__img-wrap { height: 1.8in; }
+
+  /* Contact — show info only */
+  .contact {
+    background: #1a1612 !important;
+    padding: 24pt 0;
+    page-break-inside: avoid;
+  }
+  .contact__grid { grid-template-columns: 1fr; }
+  .contact__card {
+    background: rgba(245,238,216,0.06) !important;
+    border-color: rgba(245,238,216,0.12) !important;
+  }
+  .contact__company { color: #d4ae52 !important; }
+  .contact__name { color: #f5eed8 !important; }
+  .contact__phone { color: #d4ae52 !important; }
+
+  /* Footer */
+  .footer {
+    background: #12100d !important;
+    border-top-color: #b8912a !important;
+    padding: 16pt 0;
+  }
+  .footer__company { color: #f5eed8 !important; }
+  .footer__contacts a { color: #d4ae52 !important; }
+  .footer__legal { color: rgba(245,238,216,0.3) !important; font-size: 7pt; }
+
+  /* Pin labels */
+  .pin__label {
+    background: rgba(26,22,18,0.75) !important;
+    color: #f5eed8 !important;
+    border-color: #b8912a !important;
+    font-size: 7pt;
+  }
+
+  /* Disable animations */
+  .section-title, .section-sub, .highlights__bullets, .highlights__distances,
+  .clubs__card, .contact__card, .contact__form-wrap, .lots__table-wrap, .stats__item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Page margins */
+  @page {
+    size: letter;
+    margin: 0.4in;
+  }
+
+  /* Links */
+  a { color: #b8912a !important; text-decoration: none !important; }
+  a[href^="tel:"]::after { content: none; }
+}

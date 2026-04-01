@@ -1,0 +1,25 @@
+# Source/original files (not needed for the live site)
+*.MOV
+*.MP4
+*.mp4
+*.pdf
+*.gif
+pin-location-debug*.jpg
+pin-location-verify.jpg
+.claude/
+.DS_Store
+
+# Original uploaded images (renamed copies are used)
+getImage.jpg
+USETHISFORBIGEASY.jpg
+USETHISFORBIGEASYFINAL.gif
+NOTHISONE.jpg
+Big Easy Master.jpg
+Big Easy Ranch Image.gif
+Darmor Club Image.jpg
+Downtown Columbus.jpg
+Main Cycle Image1.jpeg
+MainCycleimage2.jpeg
+maincyleimage2.jpeg
+maincycle image4.jpeg
+New Mainpage Photos/

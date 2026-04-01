@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piper Creek Ranch Estates — 68 Acres in Columbus, TX</title>
+  <meta name="description" content="Piper Creek Ranch Estates — Six premium tracts from 10.45 to 14.07 acres in Columbus, TX. Creek frontage, ag exemption, minutes from Big Easy Ranch.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="emblem.svg">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Piper Creek Ranch Estates — 68 Acres in Columbus, TX">
+  <meta property="og:description" content="Six premium tracts from 10.45 to 14.07 acres. Creek frontage, ag exemption, 7 min to Big Easy Ranch. Call for pricing.">
+  <meta property="og:image" content="lot-plan-aerial.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Piper Creek Ranch Estates — Columbus, TX">
+  <meta name="twitter:description" content="68 acres, 6 tracts, creek frontage. Minutes from Big Easy Ranch and Darmor Club.">
+  <meta name="twitter:image" content="lot-plan-aerial.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="print.css" media="print">
+</head>
+<body>
+
+  <!-- ═══ FIXED NAV ═══ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">
+        <img src="emblem.svg" alt="Frontier Land" class="nav__emblem">
+        <span class="nav__wordmark">Frontier Land</span>
+      </a>
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="#lots">Lots</a></li>
+        <li><a href="#highlights">Property</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#clubs">Clubs</a></li>
+        <li><a href="https://maps.app.goo.gl/vGyiiM2Zv3LBuHAy6" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Directions</a></li>
+        <li><a href="#contact" class="btn btn--gold btn--sm">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO (Image Slideshow) ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero__slides">
+      <img src="property-1.jpeg" alt="Aerial view of Piper Creek Ranch Estates" class="hero__slide is-active">
+      <img src="property-2.jpeg" alt="Aerial view showing creek and road access" class="hero__slide">
+      <img src="property-5.jpeg" alt="Open pasture with mature oak trees" class="hero__slide">
+      <img src="property-8.jpeg" alt="Iconic heritage oak tree on the property" class="hero__slide">
+    </div>
+    <div class="hero__overlay">
+      <img src="emblem.svg" alt="" class="hero__crest" aria-hidden="true">
+      <h1 class="hero__title">Piper Creek Ranch Estates</h1>
+      <p class="hero__sub">68 Acres &bull; Columbus, Texas</p>
+    </div>
+    <div class="hero__dots" aria-label="Image navigation">
+      <button class="hero__dot is-active" data-index="0" aria-label="Image 1"></button>
+      <button class="hero__dot" data-index="1" aria-label="Image 2"></button>
+      <button class="hero__dot" data-index="2" aria-label="Image 3"></button>
+      <button class="hero__dot" data-index="3" aria-label="Image 4"></button>
+    </div>
+  </section>
+
+  <!-- ═══ STATS BAR ═══ -->
+  <section class="stats" aria-label="Key statistics">
+    <div class="stats__inner">
+      <div class="stats__item">
+        <span class="stats__number" data-count="68">0</span>
+        <span class="stats__label">Acres</span>
+      </div>
+      <div class="stats__divider"></div>
+      <div class="stats__item">
+        <span class="stats__number" data-count="6">0</span>
+        <span class="stats__label">Tracts</span>
+      </div>
+      <div class="stats__divider"></div>
+      <div class="stats__item">
+        <span class="stats__number">10.45–14.07</span>
+        <span class="stats__label">Acres Each</span>
+      </div>
+      <div class="stats__divider"></div>
+      <div class="stats__item">
+        <span class="stats__number">5 of 6</span>
+        <span class="stats__label">Creek Frontage</span>
+      </div>
+      <div class="stats__divider"></div>
+      <div class="stats__item">
+        <span class="stats__number" data-count="7" data-suffix=" Min">0</span>
+        <span class="stats__label">to Big Easy</span>
+      </div>
+      <div class="stats__divider"></div>
+      <div class="stats__item">
+        <span class="stats__number" data-count="60" data-prefix="~" data-suffix=" Min">0</span>
+        <span class="stats__label">to Houston</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LOT PLAN ═══ -->
+  <section class="lots" id="lots">
+    <div class="container">
+      <h2 class="section-title">Available Tracts</h2>
+      <p class="section-sub">Six premium tracts along Piper Creek &mdash; no platting required, ag exemption transfers at closing.</p>
+    </div>
+
+    <div class="lots__aerial-wrap">
+      <!-- Replace src with your lot plan aerial image -->
+      <img src="lot-plan-aerial.jpg" alt="Lot plan aerial showing all six tracts" class="lots__aerial-img">
+
+      <button class="pin pin--lot pin--interactive" style="top:40%;left:40%" data-lot="1">
+        <span class="pin__label pin__label--lot">Lot 1</span>
+      </button>
+      <button class="pin pin--lot pin--interactive" style="top:38%;left:64%" data-lot="2">
+        <span class="pin__label pin__label--lot">Lot 2</span>
+      </button>
+      <button class="pin pin--lot pin--interactive" style="top:48%;left:50%" data-lot="3">
+        <span class="pin__label pin__label--lot">Lot 3</span>
+      </button>
+      <button class="pin pin--lot pin--interactive" style="top:56%;left:52%" data-lot="4">
+        <span class="pin__label pin__label--lot">Lot 4</span>
+      </button>
+      <button class="pin pin--lot pin--interactive" style="top:61%;left:52%" data-lot="5">
+        <span class="pin__label pin__label--lot">Lot 5</span>
+      </button>
+      <button class="pin pin--lot pin--interactive" style="top:67%;left:57%" data-lot="6">
+        <span class="pin__label pin__label--lot">Lot 6</span>
+      </button>
+
+      <!-- Lot detail slide-out panel -->
+      <div class="lot-detail" id="lotDetail">
+        <button class="lot-detail__close" aria-label="Close">&times;</button>
+        <img src="" alt="" class="lot-detail__img" id="lotDetailImg">
+        <h3 class="lot-detail__name" id="lotDetailName"></h3>
+        <div class="lot-detail__meta" id="lotDetailMeta"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="lots__table-wrap">
+        <table class="lots__table">
+          <thead>
+            <tr>
+              <th>Tract</th>
+              <th>Acreage</th>
+              <th>Road Access</th>
+              <th>Creek Frontage</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lot 1</td>
+              <td>10.45 ac</td>
+              <td>Dungens Mill Rd</td>
+              <td>Yes</td>
+              <td class="lots__price">Call for Pricing</td>
+            </tr>
+            <tr>
+              <td>Lot 2</td>
+              <td>10.45 ac</td>
+              <td>Venghaus George Rd</td>
+              <td>&mdash;</td>
+              <td class="lots__price">Call for Pricing</td>
+            </tr>
+            <tr>
+              <td>Lot 3</td>
+              <td>10.75 ac</td>
+              <td>Venghaus George Rd</td>
+              <td>Yes</td>
+              <td class="lots__price">Call for Pricing</td>
+            </tr>
+            <tr>
+              <td>Lot 4</td>
+              <td>11.00 ac</td>
+              <td>Venghaus George Rd</td>
+              <td>Yes</td>
+              <td class="lots__price">Call for Pricing</td>
+            </tr>
+            <tr>
+              <td>Lot 5</td>
+              <td>14.07 ac</td>
+              <td>Venghaus George Rd</td>
+              <td>Yes</td>
+              <td class="lots__price">Call for Pricing</td>
+            </tr>
+            <tr>
+              <td>Lot 6</td>
+              <td>10.45 ac</td>
+              <td>Venghaus George Rd</td>
+              <td>Yes</td>
+              <td class="lots__price">Call for Pricing</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="lots__note">Lot 2 may allow dual road access &mdash; call for details.</p>
+      </div>
+
+      <!-- Individual Lot Aerials -->
+      <h3 class="lots__gallery-title">Individual Tract Aerials</h3>
+      <div class="lots__gallery">
+        <div class="lot-card" data-lot="1">
+          <img src="lot-1-aerial.jpg" alt="Lot 1 aerial — 10.45 acres on Dungens Mill Rd" class="lot-card__img" loading="lazy">
+          <div class="lot-card__info">
+            <span class="lot-card__name">Lot 1</span>
+            <span class="lot-card__acres">10.45 ac</span>
+          </div>
+        </div>
+        <div class="lot-card" data-lot="2">
+          <img src="lot-2-aerial.jpg" alt="Lot 2 aerial — 10.45 acres on Venghaus George Rd" class="lot-card__img" loading="lazy">
+          <div class="lot-card__info">
+            <span class="lot-card__name">Lot 2</span>
+            <span class="lot-card__acres">10.45 ac</span>
+          </div>
+        </div>
+        <div class="lot-card" data-lot="3">
+          <img src="lot-3-aerial.jpg" alt="Lot 3 aerial — 10.75 acres" class="lot-card__img" loading="lazy">
+          <div class="lot-card__info">
+            <span class="lot-card__name">Lot 3</span>
+            <span class="lot-card__acres">10.75 ac</span>
+          </div>
+        </div>
+        <div class="lot-card" data-lot="4">
+          <img src="lot-4-aerial.jpg" alt="Lot 4 aerial — 11.00 acres" class="lot-card__img" loading="lazy">
+          <div class="lot-card__info">
+            <span class="lot-card__name">Lot 4</span>
+            <span class="lot-card__acres">11.00 ac</span>
+          </div>
+        </div>
+        <div class="lot-card" data-lot="5">
+          <img src="lot-5-aerial.jpg" alt="Lot 5 aerial — 14.07 acres" class="lot-card__img" loading="lazy">
+          <div class="lot-card__info">
+            <span class="lot-card__name">Lot 5</span>
+            <span class="lot-card__acres">14.07 ac</span>
+          </div>
+        </div>
+        <div class="lot-card" data-lot="6">
+          <img src="lot-6-aerial.jpg" alt="Lot 6 aerial — 10.45 acres" class="lot-card__img" loading="lazy">
+          <div class="lot-card__info">
+            <span class="lot-card__name">Lot 6</span>
+            <span class="lot-card__acres">10.45 ac</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HIGHLIGHTS + DISTANCE GRID ═══ -->
+  <section class="highlights" id="highlights">
+    <div class="container">
+      <h2 class="section-title">Property Highlights</h2>
+      <div class="highlights__grid">
+
+        <!-- LEFT: Highlights -->
+        <div class="highlights__bullets">
+          <ul>
+            <li>68 total acres divided into six generous tracts (10.45 &ndash; 14.07 ac)</li>
+            <li>5 of 6 lots feature Piper Creek frontage</li>
+            <li>No platting required &mdash; simpler, faster closing</li>
+            <li>Ag exemption transfers at closing for lower property taxes</li>
+            <li>Light restrictions to protect property values while preserving freedom</li>
+            <li>Ideal for ranchettes, weekend retreats, or custom estate homes</li>
+            <li>Rolling terrain with mature trees and open pasture</li>
+            <li>Columbus, TX 78934 &mdash; Colorado County</li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: Distances -->
+        <div class="highlights__distances">
+          <h3 class="highlights__dist-title">Distances &amp; Drive Times</h3>
+          <div class="dist-grid">
+            <div class="dist-grid__item">
+              <span class="dist-grid__value">7 min</span>
+              <span class="dist-grid__label">Big Easy Ranch</span>
+            </div>
+            <div class="dist-grid__item">
+              <span class="dist-grid__value">~10 min</span>
+              <span class="dist-grid__label">Darmor Club</span>
+            </div>
+            <div class="dist-grid__item">
+              <span class="dist-grid__value">~12 min</span>
+              <span class="dist-grid__label">I-10</span>
+            </div>
+            <div class="dist-grid__item">
+              <span class="dist-grid__value">~25 min</span>
+              <span class="dist-grid__label">Round Top</span>
+            </div>
+            <div class="dist-grid__item">
+              <span class="dist-grid__value">~30 min</span>
+              <span class="dist-grid__label">Sealy</span>
+            </div>
+            <div class="dist-grid__item">
+              <span class="dist-grid__value">~55 min</span>
+              <span class="dist-grid__label">Grand Parkway</span>
+            </div>
+            <div class="dist-grid__item">
+              <span class="dist-grid__value">~60 min</span>
+              <span class="dist-grid__label">Memorial / Energy Corridor</span>
+            </div>
+            <div class="dist-grid__item">
+              <span class="dist-grid__value">~75 min</span>
+              <span class="dist-grid__label">Downtown Houston</span>
+            </div>
+            <div class="dist-grid__item">
+              <span class="dist-grid__value">~60 min</span>
+              <span class="dist-grid__label">Houston</span>
+            </div>
+            <div class="dist-grid__item">
+              <span class="dist-grid__value">~90 min</span>
+              <span class="dist-grid__label">Austin</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROPERTY GALLERY ═══ -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h2 class="section-title">The Property</h2>
+      <p class="section-sub">Rolling terrain, mature oaks, open pasture, and creek frontage across 68 acres.</p>
+      <div class="gallery__grid">
+        <div class="gallery__item gallery__item--wide">
+          <img src="property-9.jpeg" alt="Wide aerial view of the property" class="gallery__img" loading="lazy">
+        </div>
+        <div class="gallery__item">
+          <img src="property-3.jpeg" alt="Gated entrance to the property" class="gallery__img" loading="lazy">
+        </div>
+        <div class="gallery__item">
+          <img src="property-4.jpeg" alt="Rolling terrain with trees" class="gallery__img" loading="lazy">
+        </div>
+        <div class="gallery__item">
+          <img src="property-6.jpeg" alt="Mature oak trees and open space" class="gallery__img" loading="lazy">
+        </div>
+        <div class="gallery__item">
+          <img src="property-7.jpeg" alt="Oak canopy along property trail" class="gallery__img" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ REGIONAL MAP ═══ -->
+  <section class="region-map" id="location">
+    <div class="container">
+      <h2 class="section-title">Regional Context</h2>
+      <p class="section-sub">Perfectly positioned between Houston and Austin along the I-10 corridor.</p>
+    </div>
+    <div class="region-map__wrap">
+      <img src="hero-aerial.jpg" alt="Regional satellite view showing Piper Creek Ranch Estates relative to Houston and Columbus" class="region-map__img">
+      <div class="pin" style="top:52.5%;left:25.6%">
+        <span class="pin__label">Piper Creek Ranch Estates</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INTERACTIVE MAP EMBED (LandID) ═══ -->
+  <section class="embed-map">
+    <div class="container">
+      <h2 class="section-title">Explore the Property</h2>
+      <div class="embed-map__frame">
+        <iframe
+          loading="lazy"
+          frameborder="0"
+          height="520"
+          width="100%"
+          src="https://id.land/maps/7dbb085af10ecfbb578acd70f708b950/embed"
+          title="Piper Creek Ranch Estates on LandID">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DESTINATION CLUBS ═══ -->
+  <section class="clubs" id="clubs">
+    <div class="container">
+      <h2 class="section-title">World-Class Destination Clubs</h2>
+      <p class="section-sub">Minutes from two of the most acclaimed private clubs in Texas.</p>
+
+      <div class="clubs__grid">
+
+        <div class="clubs__card">
+          <div class="clubs__img-wrap">
+            <img src="big-easy.jpg" alt="Big Easy Ranch site plan and amenities" class="clubs__img">
+          </div>
+          <div class="clubs__body">
+            <h3 class="clubs__name">Big Easy Ranch</h3>
+            <p class="clubs__distance">7 minutes from Piper Creek</p>
+            <ul class="clubs__details">
+              <li>#1 Golf Digest 2025</li>
+              <li>#1 Texas &mdash; Dallas Morning News 2025</li>
+              <li>Premier destination golf and ranch club</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="clubs__card">
+          <div class="clubs__img-wrap">
+            <!-- Replace with Darmor Club image -->
+            <img src="darmor-club.jpg" alt="Darmor Club golf course" class="clubs__img">
+          </div>
+          <div class="clubs__body">
+            <h3 class="clubs__name">Darmor Club</h3>
+            <p class="clubs__distance">~10 minutes from Piper Creek</p>
+            <ul class="clubs__details">
+              <li>Hal Sutton signature design</li>
+              <li>&ldquo;Scotland in Texas&rdquo;</li>
+              <li>Exclusive links-style experience</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DISCOVER COLUMBUS ═══ -->
+  <section class="columbus" id="columbus">
+    <div class="container">
+      <h2 class="section-title">Discover Columbus, Texas</h2>
+      <p class="section-sub">A charming historic town with Southern character &mdash; just minutes from Piper Creek Ranch Estates.</p>
+
+      <div class="columbus__hero">
+        <img src="columbus-downtown.jpg" alt="Historic downtown Columbus, Texas" class="columbus__hero-img">
+        <div class="columbus__drive-badge">
+          <span class="columbus__drive-time">~15 min</span>
+          <span class="columbus__drive-label">from the property</span>
+        </div>
+      </div>
+
+      <div class="columbus__grid">
+        <div class="columbus__card">
+          <div class="columbus__icon">&#9961;</div>
+          <h3 class="columbus__card-title">Historic Courthouse Square</h3>
+          <p class="columbus__card-text">The 1891 Colorado County Courthouse features a Tiffany-style stained glass dome and copper Neo-classic cupola. The surrounding square is one of the most prominent historic districts in Texas.</p>
+        </div>
+        <div class="columbus__card">
+          <div class="columbus__icon">&#9835;</div>
+          <h3 class="columbus__card-title">Stafford Opera House</h3>
+          <p class="columbus__card-text">Built in 1886, the only flat-floored opera house still standing in Texas. Hosts monthly dinner theater, live performances, weddings, and community events.</p>
+        </div>
+        <div class="columbus__card">
+          <div class="columbus__icon">&#127863;</div>
+          <h3 class="columbus__card-title">Local Craft Scene</h3>
+          <p class="columbus__card-text">Explore Hound Song Brewing Company, Whistling Duck Winery, and eclectic shopping on the square. The Columbus Country Market runs Saturdays, March through November.</p>
+        </div>
+        <div class="columbus__card">
+          <div class="columbus__icon">&#127965;</div>
+          <h3 class="columbus__card-title">Colorado River &amp; Outdoors</h3>
+          <p class="columbus__card-text">The 6.5-mile Columbus Paddling Trail offers kayaking through stunning scenery. Columbus is also home to Grandma&rsquo;s Oak, the largest live oak on the Texas Big Tree Registry.</p>
+        </div>
+      </div>
+
+      <div class="columbus__gallery">
+        <img src="columbus-courthouse.jpg" alt="Colorado County Courthouse" class="columbus__gallery-img" loading="lazy">
+        <img src="columbus-square.jpg" alt="Columbus town square" class="columbus__gallery-img" loading="lazy">
+        <img src="columbus-river.jpg" alt="Colorado River near Columbus" class="columbus__gallery-img" loading="lazy">
+      </div>
+
+      <div class="columbus__cta">
+        <a href="https://maps.app.goo.gl/vGyiiM2Zv3LBuHAy6" target="_blank" rel="noopener" class="btn btn--gold btn--sm">Get Directions to the Property</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title section-title--light">Get In Touch</h2>
+      <p class="section-sub section-sub--light">Ready to explore Piper Creek Ranch Estates? Contact us today.</p>
+      <div class="contact__actions">
+        <a href="flyer.html" target="_blank" class="btn btn--gold btn--sm">Download Property Flyer</a>
+        <a href="https://maps.app.goo.gl/vGyiiM2Zv3LBuHAy6" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Get Directions</a>
+        <button class="btn btn--outline btn--sm" id="shareBtn" aria-label="Share">Share This Property</button>
+      </div>
+
+      <div class="contact__grid">
+
+        <div class="contact__info">
+          <div class="contact__card">
+            <p class="contact__company">Frontier Land</p>
+
+            <div class="contact__person">
+              <h3 class="contact__name">Michael Foley</h3>
+              <a href="tel:+18327526265" class="contact__phone">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                (832) 752-6265
+              </a>
+            </div>
+
+            <div class="contact__person">
+              <h3 class="contact__name">Kegan Cunningham</h3>
+              <a href="tel:+18324940999" class="contact__phone">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                (832) 494-0999
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__form-wrap">
+          <form class="contact__form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" required>
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="I'm interested in learning more about Piper Creek Ranch Estates..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--gold btn--lg">Send Inquiry</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="emblem.svg" alt="" class="footer__emblem" aria-hidden="true">
+          <p class="footer__company">Frontier Land</p>
+          <p class="footer__address">Columbus, TX 78934 &bull; Colorado County</p>
+        </div>
+        <div class="footer__contacts">
+          <p>Michael Foley &mdash; <a href="tel:+18327526265">(832) 752-6265</a></p>
+          <p>Kegan Cunningham &mdash; <a href="tel:+18324940999">(832) 494-0999</a></p>
+        </div>
+      </div>
+      <p class="footer__legal">&copy; 2025 Frontier Land. All rights reserved. Information deemed reliable but not guaranteed.</p>
+    </div>
+  </footer>
+
+  <!-- Lot Lightbox -->
+  <div class="lot-lightbox" id="lotLightbox">
+    <button class="lot-lightbox__close" aria-label="Close">&times;</button>
+    <img src="" alt="" class="lot-lightbox__img" id="lotLightboxImg">
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
