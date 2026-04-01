@@ -357,20 +357,25 @@
       popupAnchor: [0, -30]
     });
 
-    // City marker icon
+    // City marker icon — bigger hit target
     function cityIcon(name) {
       return L.divIcon({
-        className: 'custom-marker',
-        html: '<div class="city-dot"></div>' +
+        className: 'custom-marker city-marker',
+        html: '<div class="city-hit-area">' +
+              '<div class="city-dot"></div>' +
+              '</div>' +
               '<div class="city-label">' + name + '</div>',
-        iconSize: [0, 0],
-        iconAnchor: [0, 0],
-        popupAnchor: [0, -12]
+        iconSize: [40, 40],
+        iconAnchor: [20, 20],
+        popupAnchor: [0, -24]
       });
     }
 
     // Add property marker
-    var propertyMarker = L.marker([propertyLat, propertyLng], { icon: emblemIcon }).addTo(map);
+    var propertyMarker = L.marker([propertyLat, propertyLng], {
+      icon: emblemIcon,
+      zIndexOffset: 1000
+    }).addTo(map);
     propertyMarker.bindPopup(
       '<strong>Piper Creek Ranch Estates</strong>' +
       '<span>68 Acres &bull; Columbus, TX</span>'
@@ -378,43 +383,55 @@
 
     // Track active route line
     var activeRoute = null;
-    var activeCityMarker = null;
+    var activeCityEl = null;
 
-    // Add city markers
+    // Add city markers — bind popup once, toggle on click
     cities.forEach(function (city) {
-      var marker = L.marker([city.lat, city.lng], { icon: cityIcon(city.name) }).addTo(map);
+      var marker = L.marker([city.lat, city.lng], {
+        icon: cityIcon(city.name),
+        zIndexOffset: 500
+      }).addTo(map);
 
-      marker.on('click', function () {
-        // Remove previous route
+      // Bind popup once
+      marker.bindPopup(
+        '<strong>' + city.name + '</strong>' +
+        '<span>' + city.dist + ' &bull; ' + city.time + ' drive</span>'
+      );
+
+      marker.on('click', function (e) {
+        L.DomEvent.stopPropagation(e);
+
+        // Clear previous
         if (activeRoute) { map.removeLayer(activeRoute); }
-        if (activeCityMarker) { activeCityMarker.classList.remove('city-active'); }
+        if (activeCityEl) { activeCityEl.classList.remove('city-active'); }
 
-        // Draw route line
+        // Draw dashed route line
         activeRoute = L.polyline(
           [[propertyLat, propertyLng], [city.lat, city.lng]],
           { color: '#b8912a', weight: 3, opacity: 0.8, dashArray: '8, 8' }
         ).addTo(map);
 
-        // Show popup with drive time
-        marker.bindPopup(
-          '<strong>' + city.name + '</strong>' +
-          '<span>' + city.dist + ' &bull; ' + city.time + ' drive</span>'
-        ).openPopup();
+        // Open popup
+        marker.openPopup();
 
-        // Highlight
+        // Highlight marker
         var el = marker.getElement();
         if (el) {
-          activeCityMarker = el;
+          activeCityEl = el;
           el.classList.add('city-active');
         }
       });
     });
 
-    // Click map background to clear route
-    map.on('click', function (e) {
+    // Click map tiles to clear route and enable scroll zoom
+    map.on('click', function () {
       if (activeRoute) {
         map.removeLayer(activeRoute);
         activeRoute = null;
+      }
+      if (activeCityEl) {
+        activeCityEl.classList.remove('city-active');
+        activeCityEl = null;
       }
       map.scrollWheelZoom.enable();
     });
