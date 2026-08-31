@@ -639,6 +639,42 @@ ul { list-style: none; }
 .lot-lightbox__close:hover { opacity: 1; }
 
 /* ═══════════════════════════════════════════════════
+   PRELIMINARY PLAT
+   ═══════════════════════════════════════════════════ */
+.plat {
+  padding: var(--section-py) 0;
+  background: var(--parchment);
+}
+.plat__wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+  background: var(--white);
+  border: 1px solid rgba(184, 145, 42, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  cursor: zoom-in;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.plat__wrap:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+}
+.plat__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+.plat__note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-50);
+  margin-top: 16px;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════
    HIGHLIGHTS + DISTANCE GRID
    ═══════════════════════════════════════════════════ */
 .highlights {
@@ -1326,6 +1362,9 @@ ul { list-style: none; }
   .embed-map__frame iframe { min-height: 300px; }
 
   .region-map__leaflet { height: 350px; }
+
+  .plat__wrap { padding: 8px; }
+  .plat__note { font-size: 0.75rem; }
 
   .footer { padding: 28px 0 16px; }
   .footer__legal { font-size: 0.65rem; }

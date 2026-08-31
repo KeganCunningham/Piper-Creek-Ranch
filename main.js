@@ -7,12 +7,12 @@
 
   // ── Lot data ──
   var lotData = {
-    1: { name: 'Lot 1', acres: '10.45 ac', road: 'Dungens Mill Rd', creek: 'Yes', img: 'lot-1-aerial.jpg' },
-    2: { name: 'Lot 2', acres: '10.45 ac', road: 'Venghaus George Rd', creek: 'No (dual access possible)', img: 'lot-2-aerial.jpg' },
-    3: { name: 'Lot 3', acres: '10.75 ac', road: 'Venghaus George Rd', creek: 'Yes', img: 'lot-3-aerial.jpg' },
-    4: { name: 'Lot 4', acres: '11.00 ac', road: 'Venghaus George Rd', creek: 'Yes', img: 'lot-4-aerial.jpg' },
-    5: { name: 'Lot 5', acres: '14.07 ac', road: 'Venghaus George Rd', creek: 'Yes', img: 'lot-5-aerial.jpg' },
-    6: { name: 'Lot 6', acres: '10.45 ac', road: 'Venghaus George Rd', creek: 'Yes', img: 'lot-6-aerial.jpg' }
+    1: { name: 'Tract 1', acres: '10.86 ac', road: 'Dungens Mill Rd', creek: 'Yes', img: 'lot-1-aerial.jpg' },
+    2: { name: 'Tract 2', acres: '10.05 ac', road: 'Venghaus George Rd', creek: 'No (dual access possible)', img: 'lot-2-aerial.jpg' },
+    3: { name: 'Tract 3', acres: '10.75 ac', road: 'Venghaus George Rd', creek: 'Yes', img: 'lot-3-aerial.jpg' },
+    4: { name: 'Tract 4', acres: '12.11 ac', road: 'Venghaus George Rd', creek: 'Yes', img: 'lot-4-aerial.jpg' },
+    5: { name: 'Tract 5', acres: '14.46 ac', road: 'Venghaus George Rd', creek: 'Yes', img: 'lot-5-aerial.jpg' },
+    6: { name: 'Tract 6', acres: '10.04 ac', road: 'Venghaus George Rd', creek: 'Yes', img: 'lot-6-aerial.jpg' }
   };
 
   // ── Mobile nav toggle ──
@@ -131,7 +131,7 @@
     pin.addEventListener('click', function () {
       var lot = parseInt(this.dataset.lot);
       if (lotDetail.classList.contains('is-active') &&
-          lotDetailName.textContent === 'Lot ' + lot) {
+          lotDetailName.textContent === 'Tract ' + lot) {
         hideLotDetail();
       } else {
         showLotDetail(lot);
@@ -168,9 +168,9 @@
 
   if (lightbox && lightboxImg) {
     // Gallery items + Columbus gallery
-    document.querySelectorAll('.gallery__item, .columbus__gallery-img').forEach(function (item) {
+    document.querySelectorAll('.gallery__item, .columbus__gallery-img, .plat__wrap').forEach(function (item) {
       item.addEventListener('click', function () {
-        var img = item.querySelector('.gallery__img') || item;
+        var img = item.querySelector('.gallery__img') || item.querySelector('.plat__img') || item;
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
         lightbox.classList.add('is-active');
