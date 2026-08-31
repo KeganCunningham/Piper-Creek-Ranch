@@ -536,6 +536,9 @@ ul { list-style: none; }
   padding: 14px 20px;
   border-bottom: 1px solid rgba(26,22,18,0.08);
 }
+.lots__table tbody tr {
+  transition: background 0.2s;
+}
 .lots__table tbody tr:hover { background: var(--gold-10); }
 .lots__price {
   font-weight: 600;
@@ -548,6 +551,55 @@ ul { list-style: none; }
   margin-top: 16px;
   font-style: italic;
 }
+
+/* ── Status badges ── */
+.status-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 3px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.status-badge--available {
+  background: #3d6a3d;
+  color: var(--parchment);
+}
+.status-badge--pending {
+  background: #b8912a;
+  color: var(--ink);
+}
+.status-badge--sold {
+  background: #8a2a2a;
+  color: var(--parchment);
+}
+
+/* Sold/pending row styling in table */
+.lots__table tbody tr[data-status="sold"] { opacity: 0.5; }
+.lots__table tbody tr[data-status="sold"] .lots__price { text-decoration: line-through; color: var(--ink-50); }
+
+/* Card-level status badge (top-left corner) */
+.lot-card__status {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 3px;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.lot-card[data-status="sold"] { opacity: 0.55; }
+.lot-card[data-status="sold"] .lot-card__img { filter: grayscale(0.4); }
 
 /* ── Lot Gallery Cards ── */
 .lots__gallery-title {
@@ -1286,6 +1338,7 @@ ul { list-style: none; }
   .clubs__grid { grid-template-columns: 1fr; }
   .columbus__grid { grid-template-columns: repeat(2, 1fr); }
   .columbus__hero-img { height: 240px; }
+  .team { grid-template-columns: 1fr; max-width: 400px; }
   .contact__grid { grid-template-columns: 1fr; }
   .embed-map__frame iframe { min-height: 400px; }
 
@@ -1366,6 +1419,228 @@ ul { list-style: none; }
   .plat__wrap { padding: 8px; }
   .plat__note { font-size: 0.75rem; }
 
+  .team__card { padding: 24px 16px; }
+  .team__avatar { width: 60px; height: 60px; font-size: 1.2rem; }
+  .team__name { font-size: 1.2rem; }
+
+  .faq__q { padding: 16px 44px 16px 18px; font-size: 1rem; }
+  .faq__q::after { right: 18px; font-size: 1.3rem; }
+  .faq__a { padding: 0 18px 18px; font-size: 0.9rem; }
+
   .footer { padding: 28px 0 16px; }
   .footer__legal { font-size: 0.65rem; }
+}
+
+/* ═══════════════════════════════════════════════════
+   ABOUT / TEAM
+   ═══════════════════════════════════════════════════ */
+.about {
+  padding: var(--section-py) 0;
+  background: var(--white);
+}
+.team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.team__card {
+  text-align: center;
+  padding: 32px 20px;
+  background: var(--parchment);
+  border-radius: 8px;
+  border-top: 3px solid var(--gold);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.team__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+.team__avatar {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 16px;
+  background: var(--ink);
+  color: var(--gold-lt);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: 2px solid var(--gold);
+  letter-spacing: 0.05em;
+}
+.team__name {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.team__title {
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.team__phone {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.team__phone:hover { color: var(--gold); }
+
+/* ═══════════════════════════════════════════════════
+   FAQ
+   ═══════════════════════════════════════════════════ */
+.faq {
+  padding: var(--section-py) 0;
+  background: var(--parchment);
+}
+.faq__list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq__item {
+  background: var(--white);
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.faq__item[open] {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.faq__q {
+  position: relative;
+  padding: 20px 56px 20px 24px;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.2s;
+}
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q::after {
+  content: '+';
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: var(--gold);
+  transition: transform 0.25s;
+  line-height: 1;
+}
+.faq__item[open] .faq__q::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+.faq__q:hover { color: var(--gold); }
+.faq__a {
+  padding: 0 24px 22px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-80);
+}
+
+/* ═══════════════════════════════════════════════════
+   MOBILE STICKY CTA BAR
+   ═══════════════════════════════════════════════════ */
+.mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 900;
+  background: rgba(26, 22, 18, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  gap: 8px;
+  border-top: 2px solid var(--gold);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+.mobile-cta__btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 12px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.mobile-cta__btn--primary {
+  background: var(--gold);
+  color: var(--white);
+}
+.mobile-cta__btn--primary:active { background: var(--gold-lt); }
+.mobile-cta__btn--secondary {
+  background: transparent;
+  color: var(--parchment);
+  border: 1px solid rgba(245, 238, 216, 0.35);
+}
+.mobile-cta__btn--secondary:active { background: rgba(245, 238, 216, 0.08); }
+
+/* ═══════════════════════════════════════════════════
+   BACK TO TOP
+   ═══════════════════════════════════════════════════ */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  background: rgba(26, 22, 18, 0.9);
+  color: var(--gold-lt);
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
+  z-index: 800;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--gold);
+  color: var(--parchment);
+}
+
+/* Show mobile CTA only on small screens; reposition back-to-top to not collide */
+@media (max-width: 720px) {
+  .mobile-cta { display: flex; }
+  body { padding-bottom: 74px; }
+  .back-to-top {
+    bottom: 90px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
 }

@@ -76,6 +76,14 @@
     });
   });
 
+  // ── Back to top button ──
+  var backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   // ── Nav background on scroll ──
   var nav = document.getElementById('nav');
   if (nav) {
@@ -84,6 +92,13 @@
         nav.style.background = 'rgba(26, 22, 18, 0.98)';
       } else {
         nav.style.background = 'rgba(26, 22, 18, 0.92)';
+      }
+      if (backToTop) {
+        if (window.scrollY > 600) {
+          backToTop.classList.add('is-visible');
+        } else {
+          backToTop.classList.remove('is-visible');
+        }
       }
     }, { passive: true });
   }
@@ -205,6 +220,19 @@
         hideLotDetail();
       }
     });
+  }
+
+  // ── Dynamic tract availability count ──
+  var tractCountEl = document.getElementById('tractCount');
+  var tractLabelEl = document.getElementById('tractStatusLabel');
+  if (tractCountEl) {
+    var availableRows = document.querySelectorAll('.lots__table tbody tr[data-status="available"]');
+    var total = document.querySelectorAll('.lots__table tbody tr').length;
+    var available = availableRows.length;
+    tractCountEl.dataset.count = String(available);
+    if (tractLabelEl) {
+      tractLabelEl.textContent = available === total ? 'Tracts Available' : available + ' of ' + total + ' Available';
+    }
   }
 
   // ── Animated counter for stats ──
@@ -441,7 +469,7 @@
   if ('IntersectionObserver' in window) {
     var reveals = document.querySelectorAll(
       '.section-title, .section-sub, .highlights__bullets, .highlights__distances, ' +
-      '.clubs__card, .contact__card, .contact__form-wrap, .lots__table-wrap, .stats__item, .lot-card'
+      '.clubs__card, .contact__card, .contact__form-wrap, .lots__table-wrap, .stats__item, .lot-card, .team__card, .faq__item, .columbus__card, .plat__wrap, .dist-grid__item'
     );
 
     reveals.forEach(function (el) {

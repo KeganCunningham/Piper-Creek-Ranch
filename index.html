@@ -46,9 +46,10 @@
       <ul class="nav__links">
         <li><a href="#lots">Tracts</a></li>
         <li><a href="#plat">Plat</a></li>
-        <li><a href="#highlights">Property</a></li>
         <li><a href="#location">Location</a></li>
         <li><a href="#clubs">Clubs</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="https://maps.app.goo.gl/vGyiiM2Zv3LBuHAy6" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Directions</a></li>
         <li><a href="#contact" class="btn btn--gold btn--sm">Contact Us</a></li>
       </ul>
@@ -85,8 +86,8 @@
       </div>
       <div class="stats__divider"></div>
       <div class="stats__item">
-        <span class="stats__number" data-count="6">0</span>
-        <span class="stats__label">Tracts</span>
+        <span class="stats__number" data-count="6" id="tractCount">0</span>
+        <span class="stats__label"><span id="tractStatusLabel">Tracts Available</span></span>
       </div>
       <div class="stats__divider"></div>
       <div class="stats__item">
@@ -156,6 +157,7 @@
           <thead>
             <tr>
               <th>Tract</th>
+              <th>Status</th>
               <th>Acreage</th>
               <th>Road Access</th>
               <th>Creek Frontage</th>
@@ -163,43 +165,49 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr data-status="available">
               <td>Tract 1</td>
+              <td><span class="status-badge status-badge--available">Available</span></td>
               <td>10.86 ac</td>
               <td>Dungens Mill Rd</td>
               <td>Yes</td>
               <td class="lots__price">Call for Pricing</td>
             </tr>
-            <tr>
+            <tr data-status="available">
               <td>Tract 2</td>
+              <td><span class="status-badge status-badge--available">Available</span></td>
               <td>10.05 ac</td>
               <td>Venghaus George Rd</td>
               <td>&mdash;</td>
               <td class="lots__price">Call for Pricing</td>
             </tr>
-            <tr>
+            <tr data-status="available">
               <td>Tract 3</td>
+              <td><span class="status-badge status-badge--available">Available</span></td>
               <td>10.75 ac</td>
               <td>Venghaus George Rd</td>
               <td>Yes</td>
               <td class="lots__price">Call for Pricing</td>
             </tr>
-            <tr>
+            <tr data-status="available">
               <td>Tract 4</td>
+              <td><span class="status-badge status-badge--available">Available</span></td>
               <td>12.11 ac</td>
               <td>Venghaus George Rd</td>
               <td>Yes</td>
               <td class="lots__price">Call for Pricing</td>
             </tr>
-            <tr>
+            <tr data-status="available">
               <td>Tract 5</td>
+              <td><span class="status-badge status-badge--available">Available</span></td>
               <td>14.46 ac</td>
               <td>Venghaus George Rd</td>
               <td>Yes</td>
               <td class="lots__price">Call for Pricing</td>
             </tr>
-            <tr>
+            <tr data-status="available">
               <td>Tract 6</td>
+              <td><span class="status-badge status-badge--available">Available</span></td>
               <td>10.04 ac</td>
               <td>Venghaus George Rd</td>
               <td>Yes</td>
@@ -213,42 +221,48 @@
       <!-- Individual Lot Aerials -->
       <h3 class="lots__gallery-title">Individual Tract Aerials</h3>
       <div class="lots__gallery">
-        <div class="lot-card" data-lot="1">
+        <div class="lot-card" data-lot="1" data-status="available">
+          <span class="lot-card__status status-badge--available">Available</span>
           <img src="lot-1-aerial.jpg" alt="Tract 1 aerial — 10.86 acres on Dungens Mill Rd" class="lot-card__img" loading="lazy">
           <div class="lot-card__info">
             <span class="lot-card__name">Tract 1</span>
             <span class="lot-card__acres">10.86 ac</span>
           </div>
         </div>
-        <div class="lot-card" data-lot="2">
+        <div class="lot-card" data-lot="2" data-status="available">
+          <span class="lot-card__status status-badge--available">Available</span>
           <img src="lot-2-aerial.jpg" alt="Tract 2 aerial — 10.05 acres on Venghaus George Rd" class="lot-card__img" loading="lazy">
           <div class="lot-card__info">
             <span class="lot-card__name">Tract 2</span>
             <span class="lot-card__acres">10.05 ac</span>
           </div>
         </div>
-        <div class="lot-card" data-lot="3">
+        <div class="lot-card" data-lot="3" data-status="available">
+          <span class="lot-card__status status-badge--available">Available</span>
           <img src="lot-3-aerial.jpg" alt="Tract 3 aerial — 10.75 acres" class="lot-card__img" loading="lazy">
           <div class="lot-card__info">
             <span class="lot-card__name">Tract 3</span>
             <span class="lot-card__acres">10.75 ac</span>
           </div>
         </div>
-        <div class="lot-card" data-lot="4">
+        <div class="lot-card" data-lot="4" data-status="available">
+          <span class="lot-card__status status-badge--available">Available</span>
           <img src="lot-4-aerial.jpg" alt="Tract 4 aerial — 12.11 acres" class="lot-card__img" loading="lazy">
           <div class="lot-card__info">
             <span class="lot-card__name">Tract 4</span>
             <span class="lot-card__acres">12.11 ac</span>
           </div>
         </div>
-        <div class="lot-card" data-lot="5">
+        <div class="lot-card" data-lot="5" data-status="available">
+          <span class="lot-card__status status-badge--available">Available</span>
           <img src="lot-5-aerial.jpg" alt="Tract 5 aerial — 14.46 acres" class="lot-card__img" loading="lazy">
           <div class="lot-card__info">
             <span class="lot-card__name">Tract 5</span>
             <span class="lot-card__acres">14.46 ac</span>
           </div>
         </div>
-        <div class="lot-card" data-lot="6">
+        <div class="lot-card" data-lot="6" data-status="available">
+          <span class="lot-card__status status-badge--available">Available</span>
           <img src="lot-6-aerial.jpg" alt="Tract 6 aerial — 10.04 acres" class="lot-card__img" loading="lazy">
           <div class="lot-card__info">
             <span class="lot-card__name">Tract 6</span>
@@ -469,6 +483,83 @@
     </div>
   </section>
 
+  <!-- ═══ ABOUT / TEAM ═══ -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">About Frontier Land</h2>
+      <p class="section-sub">Texas ranch and land specialists focused on quality developments that preserve the character of the land. Piper Creek Ranch Estates is our latest offering &mdash; a rare opportunity to own a piece of the Colorado County countryside.</p>
+
+      <div class="team">
+        <div class="team__card">
+          <div class="team__avatar">JS</div>
+          <h3 class="team__name">John Santasiero</h3>
+          <p class="team__title">Broker</p>
+          <a href="tel:+17136216111" class="team__phone">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (713) 621-6111
+          </a>
+        </div>
+        <div class="team__card">
+          <div class="team__avatar">MF</div>
+          <h3 class="team__name">Michael Foley</h3>
+          <p class="team__title">Principal</p>
+          <a href="tel:+18327526265" class="team__phone">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (832) 752-6265
+          </a>
+        </div>
+        <div class="team__card">
+          <div class="team__avatar">KC</div>
+          <h3 class="team__name">Kegan Cunningham</h3>
+          <p class="team__title">Sales</p>
+          <a href="tel:+18324940999" class="team__phone">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (832) 494-0999
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Everything you need to know before you call.</p>
+
+      <div class="faq__list">
+        <details class="faq__item">
+          <summary class="faq__q">Does the agricultural exemption transfer at closing?</summary>
+          <div class="faq__a">Yes. The ag exemption is already in place and transfers to the new owner at closing, keeping property taxes low. Maintaining reasonable agricultural use preserves the exemption going forward.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Are there deed restrictions?</summary>
+          <div class="faq__a">Yes &mdash; light restrictions designed to protect property values while preserving the freedom to build and use your land. Key items: site-built or barndominium homes only (no mobile homes, trailers, or shipping containers as residences), no junkyards or salvage yards, no commercial hog or poultry operations. Full document available on request.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">What&rsquo;s the pricing?</summary>
+          <div class="faq__a">Pricing varies by tract based on acreage, road frontage, and creek access. Call John, Michael, or Kegan directly for current pricing and availability.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">How long does closing take?</summary>
+          <div class="faq__a">Because no platting is required, closings typically move faster than a standard subdivided lot &mdash; often 30 to 45 days from contract to close, depending on financing.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Is financing available?</summary>
+          <div class="faq__a">Buyers arrange their own financing. Rural land lenders such as Capital Farm Credit, Heritage Land Bank, and Legacy Ag Credit specialize in this type of property. We&rsquo;re happy to make introductions.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">What utilities are available?</summary>
+          <div class="faq__a">Electric service is available at the road via San Bernard Electric Cooperative. Water is by private well and sewage by conventional septic per TCEQ standards &mdash; standard for rural Colorado County.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Can I tour the property?</summary>
+          <div class="faq__a">Absolutely &mdash; showings are by appointment. Call us to schedule a walk-through of any tract you&rsquo;re interested in.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ CONTACT ═══ -->
   <section class="contact" id="contact">
     <div class="container">
@@ -568,6 +659,20 @@
     <button class="lot-lightbox__close" aria-label="Close">&times;</button>
     <img src="" alt="" class="lot-lightbox__img" id="lotLightboxImg">
   </div>
+
+  <!-- Mobile Sticky CTA Bar -->
+  <div class="mobile-cta" role="region" aria-label="Quick contact">
+    <a href="tel:+17136216111" class="mobile-cta__btn mobile-cta__btn--primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call John
+    </a>
+    <a href="#contact" class="mobile-cta__btn mobile-cta__btn--secondary">Request Info</a>
+  </div>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
 
   <script src="main.js"></script>
 </body>
